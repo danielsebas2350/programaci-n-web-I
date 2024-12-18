@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.jpg" alt="Logo de la práctica" class="logo" width="200" height="150">
+            <div>
+                <h1>Laboratorio de Programación</h1>
+                <p>Práctica de ejercicios de JavaScript</p>
+                <p>Docente: Ph. D. José María Tapia B.</p>
+                <p>Estudiante: Daniel Sebastián Mamani López</p>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio1')">Serie: Fibonacci</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio2')">Serie: binarios</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio3')">Sumatoria Factorial</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio4')">Rotar Número</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio5')">Rotar Dígitos Pares</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio6')">Dígitos Repetidos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio7')">Número Capicúa</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio8')">Número Primo</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio9')">Primos hasta N</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio10')">Vector Fibonacci</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio11')">Serie Exponencial</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio12')">Palíndromo</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio13')">Invertir Cadena</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio14')">Calculadora</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio15')">Números Romanos</a></li>
+                <li><a href="#" onclick="mostrarSeccion('ejercicio16')">Matriz de Pascal</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="inicio">
+                <h1>Bienvenido</h1>
+                <p>Seleccione un ejercicio en el menú para resolver.</p>
+            </section>
+
+            <section id="ejercicio1" style="display: none;">
+                <h1>Serie Fibonacci</h1>
+                <p>Ingrese un número para calcular la serie:</p>
+                <label for="numFactorial">Número (N):</label>
+                <input type="number" id="numFactorial" min="1" placeholder="Número de términos">
+                <button onclick="calcular()">Calcular</button>
+                <p id="resultadoFibonacci"></p>
+            </section>
+
+            <section id="ejercicio2" style="display: none;">
+                <h1>Serie Binaria Alternada</h1>
+                <p>Ingrese un número para calcular las primeras combinaciones binarias:</p>
+                <label for="numBinario">Número (N):</label>
+                <input type="number" id="numBinario" min="1" placeholder="Número de términos">
+                <button onclick="calcularBinario()">Calcular</button>
+                <p id="resultadoBinario"></p>
+            </section>
+
+            <section id="ejercicio3" style="display: none;">
+                <h1>Serie Factorial</h1>
+                <p>Ingrese un número para calcular la serie y su suma (S = 1!+2!+3!+.....+N!).</p>
+                <label for="numeroSerie">Número (N):</label>
+                <input type="number" id="numeroSerie" min="1">
+                <button onclick="calcularFactoriales()">Calcular</button>
+                <p id="resultadoSerie"></p>
+            </section>
+            
+            <section id="ejercicio4" style="display: none;">
+            <h1>Rotar un Número</h1>
+            <p>Ingrese un número y elija si desea rotarlo hacia la izquierda o hacia la derecha.</p>
+            <label for="numeroRotar">Número:</label>
+            <input type="number" id="numeroRotar" min="0">
+            <button onclick="rotarIzquierda()">Rotar a la Izquierda</button>
+            <button onclick="rotarDerecha()">Rotar a la Derecha</button>
+            <p id="resultadoRotar"></p>
+            </section> 
+            
+            <section id="ejercicio5" style="display: none;">
+                <h1>Rotar Dígitos Pares a la Derecha</h1>
+                <p>Ingrese un número de al menos 6 dígitos:</p>
+                <label for="inputNumero">Número:</label>
+                <input type="number" id="inputNumero" min="100000">
+                <button onclick="rotarNumerosPares()">Rotar</button>
+                <p id="resultadoRotacion"></p>
+            </section>
+
+            <section id="ejercicio6" style="display: none;">
+                <h1>Dígitos Repetidos</h1>
+                <p>Ingrese un número mayor a 100 para encontrar los dígitos repetidos:</p>
+                <label for="numeroEntrada">Número:</label>
+                <input type="number" id="numeroEntrada" min="101">
+                <button onclick="mostrarDigitosRepetidos()">Mostrar Dígitos Repetidos</button>
+                <p id="resultadoDigitos"></p>
+            </section>
+
+            <section id="ejercicio7" style="display: none;">
+                <h1>Verificar si un número es Capicúa</h1>
+                <p>Ingrese un número:</p>
+                <label for="inputNumeroCapicua">Número:</label>
+                <input type="text" id="inputNumeroCapicua" placeholder="Ejemplo: 12321">
+                <button onclick="verificarCapicua()">Verificar</button>
+                <p id="mensajeResultadoCapicua"></p>
+            </section>
+            
+            <section id="ejercicio8" style="display: none;">
+                <h1>Verificar si un número es Primo</h1>
+                <p>Ingrese un número:</p>
+                <label for="inputNumeroPrimo">Número:</label>
+                <input type="text" id="inputNumeroPrimo">
+                <button onclick="verificarPrimo()">Verificar</button>
+                <p id="mensajeResultadoPrimo"></p>
+            </section>
+
+            <section id="ejercicio9" style="display: none;">
+                <h1>Generar los números primos hasta un número n</h1>
+                <p>Ingrese un número (n):</p>
+                <label for="inputNumeroPrimos">Número:</label>
+                <input type="text" id="inputNumeroPrimos">
+                <button onclick="generarPrimos()">Generar Primos</button>
+                <p id="mensajeResultadoPrimos"></p>
+            </section>
+
+            <section id="ejercicio10" style="display: none;">
+                <h1>Generar la serie de Fibonacci hasta N</h1>
+                <p>Ingrese un número (N):</p>
+                <label for="inputNumeroFibonacci">Número:</label>
+                <input type="text" id="inputNumeroFibonacci">
+                <button onclick="generarFibonacci()">Generar Fibonacci</button>
+                <p id="mensajeResultadoFibonacci"></p>
+            </section>
+
+            <section id="ejercicio11" style="display: none;">
+                <h1>Generar la serie exponencial de e^x</h1>
+                <p>Ingrese el valor de x (base) y el número de términos:</p>
+                <label for="inputX">Valor de x:</label>
+                <input type="text" id="inputX">
+                
+                <label for="inputN">Número de términos (n):</label>
+                <input type="text" id="inputN">
+                
+                <button onclick="generarSerieExponencial()">Generar Serie Exponencial</button>
+                <p id="mensajeResultadoExponencial"></p>
+            </section>
+
+            <section id="ejercicio12" style="display: none;">
+                <h1>Verificar si una palabra es Palíndromo</h1>
+                <p>Ingrese una palabra:</p>
+                <label for="inputPalindromo">Palabra:</label>
+                <input type="text" id="inputPalindromo" placeholder="Ejemplo: radar">
+                <button onclick="verificarPalindromo()">Verificar</button>
+                <p id="mensajeResultadoPalindromo"></p>
+            </section>
+
+            <section id="ejercicio13" style="display: none;">
+                <h1>Invertir una Cadena</h1>
+                <p>Ingrese una cadena de caracteres:</p>
+                <label for="inputCadena">Cadena:</label>
+                <input type="text" id="inputCadena" placeholder="Ejemplo: Hola Mundo">
+                <button onclick="invertirCadena()">Invertir</button>
+                <p id="mensajeResultadoCadena"></p>
+            </section>
+
+            <section id="ejercicio14" style="display: none;">
+                <h1>Calculadora</h1>
+                <p>Realice operaciones básicas:</p>
+                <div class="calculadora">
+                    <input type="text" id="calcDisplay" disabled>
+                    <div class="botones">
+                        <button onclick="calcInput('7')">7</button>
+                        <button onclick="calcInput('8')">8</button>
+                        <button onclick="calcInput('9')">9</button>
+                        <button onclick="calcInput('/')">/</button>
+                        <button onclick="calcInput('4')">4</button>
+                        <button onclick="calcInput('5')">5</button>
+                        <button onclick="calcInput('6')">6</button>
+                        <button onclick="calcInput('*')">*</button>
+                        <button onclick="calcInput('1')">1</button>
+                        <button onclick="calcInput('2')">2</button>
+                        <button onclick="calcInput('3')">3</button>
+                        <button onclick="calcInput('-')">-</button>
+                        <button onclick="calcInput('0')">0</button>
+                        <button onclick="calcInput('.')">.</button>
+                        <button onclick="calcClear()">C</button>
+                        <button onclick="calcInput('+')">+</button>
+                        <button onclick="calcCalculate()">=</button>
+                        <button onclick="calcFactorial()">!</button>
+                        <button onclick="calcInput('^')">x^y</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="ejercicio15" style="display: none;">
+                <h1>Convertir un Número Entero a Números Romanos</h1>
+                <form onsubmit="convertirANumerosRomanos(event)">
+                    <label for="numero">Ingrese un número (1 - 3999):</label>
+                    <input type="number" id="numero" min="1" max="3999" required>
+                    <button type="submit">Convertir</button>
+                </form>
+                <p id="resultadoRomano"></p>
+            </section>
+
+            <section id="ejercicio16" style="display: none;">
+                <h1>Matriz de Pascal</h1>
+                <p>Ingrese el número de filas para generar la matriz de Pascal:</p>
+                <label for="inputFilas">Número de filas:</label>
+                <input type="number" id="inputFilas" min="1" placeholder="Ejemplo: 5">
+                <button onclick="generarMatrizPascal()">Generar</button>
+                <div id="resultadoPascal"></div>
+            </section>
+        
+        </div>
+    </div>
+    <footer>
+        daniel sebastian mamani lopez 
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
